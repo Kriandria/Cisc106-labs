@@ -26,4 +26,4 @@ Function: exponentiation():
 	We use the randint function to generate two values between 0 and 12. If a ^ b > 2500, regenerate numbers. Then prompt the user to exponentiate the two values. If input is correct, then process to next question, else tell user they are incorrect, and to try again. Give user correct answer after three failed attempts. Program should run for a total of 4 questions. Recall the menu function.
 
 Function: quit():
-	print a goodbye statement for the user, break the program
+	print a goodbye statement for the user, break the program    
