@@ -1,0 +1,29 @@
+PSEUDOCODE
+have program import randint from random
+
+Function: Welcome():
+	No parameters, Sends a welcome message and informs the user how to navigate the program
+
+Function: Menu():
+	Lists all available programs for the user to access, no parameters, returns a string, runs main(letter) using returned value
+
+Functions: Main(letter):
+	One parameter; letter (string), runs a series of if statements to see if parameter matches any items given in the menu. If it matches, run the specified program (listed in menu), else tell the user they input an invalid string and recall the menu() function
+
+Function: addition():
+	We use the randint function to generate two values between 1 and 20. Then prompt the user to add the two values. If input is correct, then process to next question, else tell user they are incorrect, and to try again. Give user correct answer after three failed attempts. Program should run for a total of 4 questions. Recall the menu function.
+
+Function: subtraction():
+	We use the randint function to generate two values between 1 and 20. If the first number is smaller than the second, swap their values. Then prompt the user to subtract the two values. If input is correct, then process to next question, else tell user they are incorrect, and to try again. Give user correct answer after three failed attempts. Program should run for a total of 4 questions. Recall the menu function.
+
+Function: multiplication():
+	We use the randint function to generate two values between 0 and 15. Then prompt the user to multiply the two values. If input is correct, then process to next question, else tell user they are incorrect, and to try again. Give user correct answer after three failed attempts. Program should run for a total of 4 questions. Recall the menu function.
+
+Function: division():
+	We use the randint function to generate two values, the divisor between 1 and 15, and the quotient from 0 - 15. Then prompt the user to divide the two values. If input is correct, then process to next question, else tell user they are incorrect, and to try again. Give user correct answer after three failed attempts. Program should run for a total of 4 questions. Recall the menu function.
+
+Function: exponentiation():
+	We use the randint function to generate two values between 0 and 12. If a ^ b > 2500, regenerate numbers. Then prompt the user to exponentiate the two values. If input is correct, then process to next question, else tell user they are incorrect, and to try again. Give user correct answer after three failed attempts. Program should run for a total of 4 questions. Recall the menu function.
+
+Function: quit():
+	print a goodbye statement for the user, break the program
