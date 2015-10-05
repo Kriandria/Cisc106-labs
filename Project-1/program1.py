@@ -22,8 +22,10 @@ def main():
             addition()
         elif choice == Multiplication:
             print('Multiplication')
+            multiplication()
         elif choice == Division:
             print('Division')
+            division()
         elif choice == Exponentiation:
             print('Exponentiation')
         elif choice == Quit:
@@ -83,6 +85,56 @@ def subtraction():
                 else:
                     print('That is the incorrect answer. Please Try again.')
 
+
+def multiplication():
+    runs = 0
+    while runs < 4:
+        complete = False
+        tries = 0
+        x = randint(0,15)
+        y = randint(0,15)
+        while not(complete):
+            answer = x * y
+            response = int(input('What is {} * {}?: '.format(x, y)))
+    
+            if response == answer:
+                print('That is correct!')
+                runs += 1
+                complete = True
+            else:
+                tries += 1
+                if tries == 3:
+                    runs += 1
+                    complete = True
+                    print('That is incorrect, the correct answer was',answer)
+                else:
+                    print('That is the incorrect answer. Please Try again.')
+
+def division():
+    runs = 0
+    while runs < 4:
+        complete = False
+        tries = 0
+        quotient = randint(0,15)
+        divisor = randint(1,15)
+        while quotient % divisor != 0:
+            divisor = randint(1,15)
+        while not(complete):
+            answer = quotient / divisor
+            response = int(input('What is {} / {}?: '.format(quotient, divisor)))
+    
+            if response == answer:
+                print('That is correct!')
+                runs += 1
+                complete = True
+            else:
+                tries += 1
+                if tries == 3:
+                    runs += 1
+                    complete = True
+                    print('That is incorrect, the correct answer was',answer)
+                else:
+                    print('That is the incorrect answer. Please Try again.')
 
 def display_menu():
     print('MENU')
