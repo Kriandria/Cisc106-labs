@@ -28,8 +28,11 @@ def main():
             division()
         elif choice == Exponentiation:
             print('Exponentiation')
+            exponentiation()
         elif choice == Quit:
-            print('Quit')
+            print('Thank you for using the CISC106 Basic Math Instructor \
+program. Goodbye.')
+            
         else:
             print('Error: Invalid selection, please enter a valid choice.’')
 
@@ -136,6 +139,32 @@ def division():
                 else:
                     print('That is the incorrect answer. Please Try again.')
 
+def exponentiation():
+    runs = 0
+    while runs < 4:
+        complete = False
+        tries = 0
+        exponent = randint(0,12)
+        base = randint(0,12)
+        while base ** exponent > 2500:
+            base = randint(0,12)
+        while not(complete):
+            answer = base ** exponent
+            response = int(input('What is {} ** {}?: '.format(base, exponent)))
+    
+            if response == answer:
+                print('That is correct!')
+                runs += 1
+                complete = True
+            else:
+                tries += 1
+                if tries == 3:
+                    runs += 1
+                    complete = True
+                    print('That is incorrect, the correct answer was',answer)
+                else:
+                    print('That is the incorrect answer. Please Try again.')
+
 def display_menu():
     print('MENU')
     print('(a) Addition')
@@ -146,6 +175,3 @@ def display_menu():
     print('(q) Quit')
 
 main()
-
-
-
