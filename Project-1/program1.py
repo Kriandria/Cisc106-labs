@@ -8,7 +8,7 @@ Exponentiation = 'e'
 Random = 'r'
 Quit = 'q'
 
-x1 = 0
+x1 = 0   #global variables that keep track of when the correct answer is given
 x2 = 0
 x3 = 0
 x4 = 0
