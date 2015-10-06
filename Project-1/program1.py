@@ -23,21 +23,27 @@ def main():
 
         if choice == Subtraction:
             print('Subtraction')
+            print()
             subtraction()
         elif choice == Addition:
             print('Addition')
+            print()
             addition()
         elif choice == Multiplication:
             print('Multiplication')
+            print()
             multiplication()
         elif choice == Division:
             print('Division')
+            print()
             division()
         elif choice == Exponentiation:
             print('Exponentiation')
+            print()
             exponentiation()
         elif choice == Random:
             print('Random')
+            print()
             randomFunction()
         elif choice == Quit:
             print('Thank you for using the CISC106 Basic Math Instructor \
@@ -80,6 +86,8 @@ def addition():
                     print('That is incorrect, the correct answer was',answer)
                 else:
                     print('That is the incorrect answer. Please Try again.')
+        print()
+                    
                 
 def subtraction():
     '''
@@ -120,6 +128,7 @@ def subtraction():
                     print('That is incorrect, the correct answer was',answer)
                 else:
                     print('That is the incorrect answer. Please Try again.')
+        print()
 
 
 def multiplication():
@@ -156,6 +165,7 @@ def multiplication():
                     print('That is incorrect, the correct answer was',answer)
                 else:
                     print('That is the incorrect answer. Please Try again.')
+        print()
 
 def division():
     '''
@@ -193,6 +203,7 @@ def division():
                     print('That is incorrect, the correct answer was',answer)
                 else:
                     print('That is the incorrect answer. Please Try again.')
+        print()
 
 def exponentiation():
     '''
@@ -230,6 +241,7 @@ Exponentiates two numbers together, garunteeing an answer less than 2500
                     print('That is incorrect, the correct answer was',answer)
                 else:
                     print('That is the incorrect answer. Please Try again.')
+        print()
 
 def randomFunction():
     '''
@@ -284,6 +296,7 @@ Determines number of questions answered, and on what tier they we answered
         
     global y
     y += 1
+
 
 main()
 
