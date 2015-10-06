@@ -56,7 +56,7 @@ def addition():
     '''
     Add two random numbers together
     Variables:
-        runs: Counts te number of problems that the program has sent the student
+        runs: Counts the number of problems that the program has sent the student
         complete: Boolean that determines when to move to the next question
         tries: Counts number of attemps on a problem
         x: First random number
@@ -94,7 +94,7 @@ def subtraction():
     Subtracts a random number from another number, always keeping
         the value positive (+)
     Variables:
-        runs: Counts te number of problems that the program has sent the student
+        runs: Counts the number of problems that the program has sent the student
         complete: Boolean that determines when to move to the next question
         tries: Counts number of attemps on a problem
         x: First random number
@@ -135,7 +135,7 @@ def multiplication():
     '''
     Multiplies two random numbers together
     Variables:
-        runs: Counts te number of problems that the program has sent the student
+        runs: Counts the number of problems that the program has sent the student
         complete: Boolean that determines when to move to the next question
         tries: Counts number of attemps on a problem
         x: First random number
@@ -171,7 +171,7 @@ def division():
     '''
  Divides to numbers from each other, guaruntees a whole number answer
     Variables:
-        runs: Counts te number of problems that the program has sent the student
+        runs: Counts the number of problems that the program has sent the student
         complete: Boolean that determines when to move to the next question
         tries: Counts number of attemps on a problem
         quotient: First random number
@@ -209,7 +209,7 @@ def exponentiation():
     '''
 Exponentiates two numbers together, garunteeing an answer less than 2500
     Variables:
-        runs: Counts te number of problems that the program has sent the student
+        runs: Counts the number of problems that the program has sent the student
         complete: Boolean that determines when to move to the next question
         tries: Counts number of attemps on a problem
         exponent: First random number
