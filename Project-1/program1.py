@@ -8,13 +8,18 @@ Exponentiation = 'e'
 Random = 'r'
 Quit = 'q'
 
-x1 = 0   #global variables that keep track of when the correct answer is given
-x2 = 0
-x3 = 0
-x4 = 0
-y = 0
+first = 0   # global variables that keep track of when the correct answer is 
+second = 0  # given, (The first, second, or third try, or if the user couldn't
+third = 0   # solve theproblem, along with the total number of questions asked,
+incorrect = 0   # listed in that order)
+totalQsAsked = 0
 
 def main():
+    '''
+    Drives the program to allow users to solve basic math functions generated
+    using semi-random numbers. The user picks the type of problem they would
+    like to solve
+    '''
     choice = 0
 
     while choice != Quit:
@@ -54,7 +59,7 @@ program. Goodbye.')
 
 def addition():
     '''
-    Add two random numbers together
+    Add two random numbers together, generated from within the range 0 to 20
     Variables:
         runs: Counts the number of problems that the program has sent the student
         complete: Boolean that determines when to move to the next question
@@ -72,6 +77,7 @@ def addition():
             answer = x + y
             response = int(input('What is {} + {}?: '.format(x, y)))
     
+            a
             if response == answer:
                 print('That is correct!')
                 runs += 1
@@ -86,13 +92,13 @@ def addition():
                     print('That is incorrect, the correct answer was',answer)
                 else:
                     print('That is the incorrect answer. Please Try again.')
-        print()
-                    
+        print()                   
                 
 def subtraction():
     '''
     Subtracts a random number from another number, always keeping
-        the value positive (+)
+        the value positive (+)   (non-negative answers)
+        Each number is generated from within the range 0 to 20
     Variables:
         runs: Counts the number of problems that the program has sent the student
         complete: Boolean that determines when to move to the next question
@@ -106,14 +112,14 @@ def subtraction():
         tries = 0
         x = randint(0,20)
         y = randint(0,20)
-        if y > x: # Code that guaruntees the first number will be greater than
+        if y > x: # Guaruntees the first number will be greater than
             temp = x # The second number
             x = y
             y = temp
         while not(complete):
             answer = x - y
             response = int(input('What is {} - {}?: '.format(x, y)))
-    
+
             if response == answer:
                 print('That is correct!')
                 runs += 1
@@ -133,7 +139,8 @@ def subtraction():
 
 def multiplication():
     '''
-    Multiplies two random numbers together
+    Multiplies two random numbers together, generated from within the
+        range 0 to 15
     Variables:
         runs: Counts the number of problems that the program has sent the student
         complete: Boolean that determines when to move to the next question
@@ -169,7 +176,10 @@ def multiplication():
 
 def division():
     '''
- Divides to numbers from each other, guaruntees a whole number answer
+ Divides two numbers from each other, finds a new divisor until the answer is
+ guarunteed to be a whole number
+ Quotient is generated from within the range 0 to 15
+ Divisor i generated from within the range 1 to 15
     Variables:
         runs: Counts the number of problems that the program has sent the student
         complete: Boolean that determines when to move to the next question
@@ -207,7 +217,8 @@ def division():
 
 def exponentiation():
     '''
-Exponentiates two numbers together, garunteeing an answer less than 2500
+Exponentiates two numbers together, generated from within the range 0 to 12.
+Finds a new base until the answer is less than 2500
     Variables:
         runs: Counts the number of problems that the program has sent the student
         complete: Boolean that determines when to move to the next question
@@ -277,30 +288,30 @@ def display_menu():
 def tallyUp(tries):
     '''
 Determines number of questions answered, and on what tier they we answered
-    correct, or if they were not answered correctly at all
+    correct, or if they were not answered correctly at all.
+Uses the global variables listed in lines 11-15
     Parameters:
         tries: number of attempts on a problem
     '''
     if tries == 0:
-        global x1
-        x1 += 1
+        global first
+        first += 1
     elif tries == 1:
-        global x2
-        x2 +=1
+        global second
+        second +=1
     elif tries == 2:
-        global x3
-        x3 += 1
+        global third
+        third += 1
     elif tries == 3:
-        global x4
-        x4 += 1
+        global incorrect
+        incorrect += 1
         
-    global y
-    y += 1
-
+    global totalQsAsked
+    totalQsAsked += 1
 
 main()
 
 print('RESULTS: Of the {} questions given to you, you correctly answered \
 {} on the first try, {} on the second try, and {} on the third try. \
-You answered {} of the {} questions incorrectly.'.format(y,x1,x2,x3,x4,y))
-
+You answered {} of the {} questions incorrectly.'\
+      .format(totalQsAsked,first,second,third,incorrect,totalQsAsked))
