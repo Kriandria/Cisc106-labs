@@ -279,6 +279,20 @@ def digit_product(string1):
 # Problem 9
 def valid_password(password):
     '''
+    Determines if a given password meets a set of given criteria
+    Parameters:
+        password - the given password to check using the given criteria (string)
+    Variables:
+        length - True if password meets length requirements, false otherwise (boolean)
+        uppercase - true if password contains an uppercase letter, false otherwise (boolean)
+        lowercase - True if password contains a lowercase letter, false otherwise (boolean)
+        numeric - True if password contains a number, false otherwise (boolean)
+        special - True if password contains a special character from the given list, false otherwise (boolean)
+        invalid_digits - True if there are any invalid digits found in the password, false otherwise (boolean)
+        list1 - list of characters found in password
+    Returns:
+        True - If password meets all requirements
+        False - If password does not meet all requirements
     '''
     length = False
     uppercase = False
@@ -312,4 +326,17 @@ def valid_password(password):
         special and not(invalid_digits)):
         return True
     else:
+        if not(length):
+            print('Password must be between 8 and 15 characters long')
+        if not(uppercase):
+            print('Password must contain at least one uppercase letter')
+        if not(lowercase):
+            print('Password must contain at least one lowercase letter')
+        if not(numeric):
+            print('Password must  contain at leaast one number')
+        if not(special):
+            print('Password must contain at least one of the following: @, $, %, ^, &, *, +, =')
+        if invalid_digits:
+            print('Password may only contain letters, numbers, and the following special \
+            characters: @, $, %, ^, &, *, +, =')
         return False
