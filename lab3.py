@@ -1,12 +1,12 @@
-# Dylan Leh Sada Mehari
+# Dylan Leh, Sada Mehari
 # Problem 1
 def count_mult3_ints(L):
     '''
     returns the number of ints in the list that are multiples of 3
     parameters:
-        L - a list
+        L - a list (list)
     variables:
-        total - counter for the total number of ints that are multiples of 3
+        total - counter for the total number of ints that are multiples of 3 (number)
     returns:
         total
     '''
@@ -24,11 +24,11 @@ def sum_odd_ints(L):
     '''
     returns the sum of ints in the list that are odd
     parameters:
-        L - a list
+        L - a list (list)
     variables:
         odd_int_in_list - boolean that is true if there is an odd int in the
-            list and false otherwise
-        total - counter for sum of the odd integers
+            list and false otherwise        (boolean)
+        total - counter for sum of the odd integers (number)
     returns:
         total
         None (if no odd integers can be found)
@@ -48,14 +48,15 @@ def sum_odd_ints(L):
 
 
 # Problem 3
-def insert_list(list1, string1):        #doesnt work for empty list
+def insert_list(list1, string1):
     '''
     Adds a string into a sorted list such that the list remains sorted
     Parameters:
-        list1 - a sorted list
-        string1 - string to be inserted into list
+        list1 - a sorted list   (list)
+        string1 - string to be inserted into list   (string)
     variables:
-        index - tracks the current index while searching the list for various things
+        index - tracks the current index while searching the list for various things    (number)
+    Chance to return None
     '''
     index = -1
     for x in list1:
@@ -132,6 +133,17 @@ def triangle_centroid(x1, y1, x2, y2, x3, y3):
 
 # Problem 5
 def assert_within_tolerance(num1, num2, tolerance):
+    '''
+    Determines whether two given numbers are close in value of one-another
+    Parameters:
+        num1 - The first of the two given numbers   (number)
+        num2 - the latter of the two given numbers  (number)
+        tolerance - The tolerance of the two numbers (number)
+    Returns:
+        True - if the two numbers pass the tolerance test
+        False - If the two numbers fail the tolerance test
+        None - if function does not meet necessary parameters
+    '''
     if type(num1) != float or type(num2) != float or type(tolerance) != float:
         print('assert_within_tolerance: error - arguments must all be defined as float')
         return None
@@ -148,6 +160,12 @@ def assert_within_tolerance(num1, num2, tolerance):
 
 # Problem 6
 def word_separator(string1):
+    '''
+    Converts a string sentence where all of the words are not separated by spaces and the first letter of each is
+    capitalized to a regular sentence
+    Parameters:
+        string1 - The sentence to be converted (string)
+    '''
     list1 = list(string1)
     index = -1
     if len(string1) > 1:
