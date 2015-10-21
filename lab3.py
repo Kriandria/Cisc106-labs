@@ -1,8 +1,5 @@
-L = [1.0, '1', 1.0, 0, -21.0, '3', 18]
-L2 = ['a','b','d']
-L3 = ['aardvark']
-L4 = []
-
+# Dylan Leh Sada Mehari
+# Problem 1
 def count_mult3_ints(L):
     '''
     returns the number of ints in the list that are multiples of 3
@@ -22,7 +19,7 @@ def count_mult3_ints(L):
 
 
 
-
+# Problem 2
 def sum_odd_ints(L):
     '''
     returns the sum of ints in the list that are odd
@@ -50,22 +47,22 @@ def sum_odd_ints(L):
 
 
 
-
+# Problem 3
 def insert_list(list1, string1):        #doesnt work for empty list
     '''
-Adds a string into a sorted list such that the list remains sorted
-Parameters:
-    list1 - a sorted list
-    string1 - string to be inserted into list
-variables:
-    index - tracks the current index while searching the list for various things
+    Adds a string into a sorted list such that the list remains sorted
+    Parameters:
+        list1 - a sorted list
+        string1 - string to be inserted into list
+    variables:
+        index - tracks the current index while searching the list for various things
     '''
     index = -1
     for x in list1:
         if type(x) != str:
             print('insert_list: error - list parameter contains more types \
 than str')
-            return None    
+            return None
     for x in list1:
         index += 1
         if index != 0:
@@ -85,22 +82,28 @@ than str')
         elif string1 > list1[-1]:
             list1.append(string1)
             break
-        
+
     if list1 == []:
         list1.append(string1)
 
 
 
+
+# Problem 4
 def triangle_centroid(x1, y1, x2, y2, x3, y3):
     '''
-Determines the distance from the origin to the centroid of a circle
-Parameters:
-    x1 - x coordinate of the first point of the triangle
-    y1 - y coordinate of the first point of the triangle
-    x2 - x coordinate of the second point of the triangle
-    y2 - y coordinate of the second point of the triangle
-    x3 - x coordinate of the third point of the triangle
-    y3 - y coordinate of the third point of the triangle
+    Determines the distance from the origin to the centroid of a circle
+    Parameters:
+        x1 - x coordinate of the first point of the triangle (number)
+        y1 - y coordinate of the first point of the triangle (number)
+        x2 - x coordinate of the second point of the triangle (number)
+        y2 - y coordinate of the second point of the triangle (number)
+        x3 - x coordinate of the third point of the triangle (number)
+        y3 - y coordinate of the third point of the triangle (number)
+    Variables
+        stop - boolean that states if parameter testing fails or succeeds (boolean)
+        Tx - x coordinate of the centroid of the triangle (number)
+        Ty - y coordinate of the centroid of the triangle (number)
     '''
     stop = False
     if type(x1) != int and type(x1) != float:
@@ -127,8 +130,134 @@ Parameters:
 
 
 
-
+# Problem 5
 def assert_within_tolerance(num1, num2, tolerance):
-    stop = False
-    
+    if type(num1) != float or type(num2) != float or type(tolerance) != float:
+        print('assert_within_tolerance: error - arguments must all be defined as float')
+        return None
+    if tolerance < 0:
+        print('assert_within_tolerance: error - parameter tolerance must be positive')
+        return None
 
+    if abs(num1 - num2) <= tolerance:
+        return True
+    else:
+        return False
+
+
+
+# Problem 6
+def word_separator(string1):
+    list1 = list(string1)
+    index = -1
+    if len(string1) > 1:
+        while index < len(string1):
+            index += 1
+            if list1[index].isupper() and index != 0:
+                list1[index] = list1[index].lower()
+                list1.insert(index,' ')
+                index += 1
+    else:
+        return string1.upper()
+
+    return ''.join(list1)
+
+
+
+
+# Problem 7
+def word_parser(string1):
+    list1 = list(string1)
+    list2 = []
+    list3 = []
+    index = -1
+
+    for x in list1:
+        index += 1
+        if list1[index] == ' ':
+            if list1[index + 1] == ' ':
+                list2.append(index)
+
+    index = len(list1)
+    for x in reversed(list1):
+        index -= 1
+        if index in list2:
+            list1.pop(index)
+
+    string2 = ''.join(list1)
+
+    tmp = ''
+    for c in string2:
+        if c == ' ':
+            list3.append(tmp)
+            tmp = ''
+        else:
+            tmp += c
+    if tmp:
+        list3.append(tmp)
+
+    if list3[0] == '':
+        list3.pop(0)
+
+    print(list3)
+
+
+
+# Problem 8
+def digit_product(string1):
+    if type(string1) != str:
+        print('digit_product: error - parameter must be defined as str')
+        return None
+
+    total = 1
+    found = False
+    list1 = list(string1)
+    for x in list1:
+        if x.isdigit():
+            found = True
+            total *= int(x)
+
+    if (found):
+        return total
+    else:
+        return None
+
+
+
+
+
+# Problem 9
+def valid_password(password):
+    length = False
+    uppercase = False
+    lowercase = False
+    numeric = False
+    special = False
+    invalid_digits = False
+
+    if len(password) >= 8 and len(password) <= 15:
+        length = True
+
+    list1 = list(password)
+    for x in list1:
+        if x.isalpha():
+            if x.isupper():
+                uppercase = True
+            elif x.islower():
+                lowercase = True
+
+        elif x.isdigit():
+            numeric = True
+
+        elif (x == '@' or x == '$' or x == '%' or x == '^' or x == '&' or
+            x == '*' or x == '+' or x == '='):
+            special = True
+
+        else:
+            invalid_digits = True
+
+    if (length and uppercase and lowercase and numeric and
+        special and not(invalid_digits)):
+        return True
+    else:
+        return False
