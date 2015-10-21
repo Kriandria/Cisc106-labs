@@ -165,6 +165,11 @@ def word_separator(string1):
     capitalized to a regular sentence
     Parameters:
         string1 - The sentence to be converted (string)
+    Variables:
+        list1 - a list made by splitting string1 into characters (list)
+        index - a counter for the current index of the loop in the function (number)
+    Returns:
+        ''.join(list1) - combines the list into a single string and returns it (string)
     '''
     list1 = list(string1)
     index = -1
@@ -185,6 +190,21 @@ def word_separator(string1):
 
 # Problem 7
 def word_parser(string1):
+    '''
+    Takes a sentence with any amount of whitespace between words and turns it into a list of words (without
+    whitespace)
+    Parameters:
+        string1 - the sentence with whitespace to be separated (string)
+    Variables:
+        list1 - list made up of the characters of string1 (list)
+        list2 - List of indicies to be removed from list1 (list)
+        list3 - Final list to be retured, contains only words in list1 (list)
+        index - a counter for the current index of the loop in the function (number)
+        temp - temporary holder for a word lin list1    (string)
+        string2 - string1 with only 1 whitespace between each word  (string)
+    Returns:
+        list3
+    '''
     list1 = list(string1)
     list2 = []
     list3 = []
@@ -204,17 +224,17 @@ def word_parser(string1):
 
     string2 = ''.join(list1)
 
-    tmp = ''
-    for c in string2:
-        if c == ' ':
+    temp = ''
+    for x in string2:
+        if x == ' ':
             list3.append(tmp)
             tmp = ''
         else:
-            tmp += c
-    if tmp:
-        list3.append(tmp)
+            temp += c
+    if temp:
+        list3.append(temp)
 
-    if list3[0] == '':
+    if list3[0] == '':      # Removes any whitespace before the first word in list3
         list3.pop(0)
 
     print(list3)
@@ -223,6 +243,18 @@ def word_parser(string1):
 
 # Problem 8
 def digit_product(string1):
+    '''
+    Returns the product of every digit that occurs in the given string
+    Parameters:
+        string1 - the string that possibly contains digits for the programs output (string)
+    Variables:
+        total - keeps track of the product of the digits in string1 (number)
+        found - boolean that states if there is a digit in the string   (boolean)
+        list1 - list comprised of the characters of string1 (list)
+    Returns:
+        total
+        None - if there are no digits in string1, or if string1 is not defined as a string
+    '''
     if type(string1) != str:
         print('digit_product: error - parameter must be defined as str')
         return None
@@ -246,6 +278,8 @@ def digit_product(string1):
 
 # Problem 9
 def valid_password(password):
+    '''
+    '''
     length = False
     uppercase = False
     lowercase = False
