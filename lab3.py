@@ -15,6 +15,12 @@ def count_mult3_ints(L):
         if type(x) == int and x%3 == 0:
             total += 1
     return total
+assertEqual(count_mult3_ints([9, 12]), 2)
+assertEqual(count_mult3_ints([9, 12, 16, 18, 24]), 3)
+assertEqual(count_mult3_ints([3, 15, 7, 18, 27]), 4)
+assertEqual(count_mult3_ints([9, 12, 7, 24, 39]), 4)
+assertEqual(count_mult3_ints([15, 36, 23, 22, 27]), 8)
+assertEqual(count_mult3_ints([12, 15, 7, 18, 27]), 5)
 
 
 
@@ -43,6 +49,12 @@ def sum_odd_ints(L):
         return total
     else:
         return None
+assertEqual(sum_odd_ints([9, 12, 7]), 16)
+assertEqual(sum_odd_ints([9, 12]), 2)
+assertEqual(sum_odd_ints([11, 15]), 26)
+assertEqual(sum_odd_ints([2, 1, 7,]), 8)
+assertEqual(sum_odd_ints([6, 3, 2, 8, 10]), 9)
+assertEqual(sum_odd_ints([8, 12, 66, 58]), None)
 
 
 
@@ -86,7 +98,7 @@ than str')
 
     if list1 == []:
         list1.append(string1)
-
+assertEqual(insert_list(['a', 'b', 'c'], 'd'), ['a', 'b', 'c','d'])
 
 
 
@@ -128,6 +140,14 @@ def triangle_centroid(x1, y1, x2, y2, x3, y3):
     Ty = (y1 + y2 + y3) / 3
 
     return (Tx ** 2 + Ty ** 2)**(1/2)
+assertEqual(triangle_centroid(0, 2, 3, 4, 6, 7), 5.27)
+assertEqual(triangle_centroid('s', '2', 3, 4, 6, 7), None)
+assertEqual(triangle_centroid(5, 8, 8, 12, 12.0, 8), 12.512216252748974 )
+assertEqual(triangle_centroid(2, 2, 6, 4, 9, 2.0), 6.262764742685312)
+assertEqual(triangle_centroid(0, '2', 3, 4, '6', 7), None)
+assertEqual(triangle_centroid('1', 2, 3, 7, '12', 7), None)
+
+
 
 
 
@@ -155,6 +175,12 @@ def assert_within_tolerance(num1, num2, tolerance):
         return True
     else:
         return False
+assertEqual(assert_within_tolerance(0, 2, 3), None)
+assertEqual(assert_within_tolerance(1.0, 2.0, -1.0), None)
+assertEqual(assert_within_tolerance(6, 9, 2), None)
+assertEqual(assert_within_tolerance(7.0, 12.0, 5.0), True)
+assertEqual(assert_within_tolerance(19.0, 24.0, 3.0), False)
+assertEqual(assert_within_tolerance(11.0, 19.0, 10.0), True)
 
 
 
@@ -184,6 +210,10 @@ def word_separator(string1):
         return string1.upper()
 
     return ''.join(list1)
+assertEqual(word_separator('HelloBob'), 'Hello bob')
+assertEqual(word_separator(''), '')
+assertEqual(word_separator('LikeWater'), 'Like water')
+
 
 
 
@@ -271,7 +301,12 @@ def digit_product(string1):
         return total
     else:
         return None
-
+assertEqual(digit_product('Hi12'), 2)
+assertEqual(digit_product('Hi6p5'), 30)
+assertEqual(digit_product('Lo8o8'), 64)
+assertEqual(digit_product(98), None)
+assertEqual(digit_product(9), None)
+assertEqual(digit_product(18), None)
 
 
 
@@ -340,3 +375,9 @@ def valid_password(password):
             print('Password may only contain letters, numbers, and the following special \
             characters: @, $, %, ^, &, *, +, =')
         return False
+assertEqual(valid_password('29374@Dp'), True)
+assertEqual(valid_password('79304@Lo'), True)
+assertEqual(valid_password('388494@mp'), False)
+assertEqual(valid_password('097@Dp'), False)
+assertEqual(valid_password('17283M45p'), False)
+assertEqual(valid_password('98304$RB'), False)
