@@ -1,5 +1,7 @@
 # Dylan Leh, Sada Mehari
-# Problem 1
+from cisc106_34 import *
+
+print('Problem 1')
 def count_mult3_ints(L):
     '''
     returns the number of ints in the list that are multiples of 3
@@ -16,16 +18,17 @@ def count_mult3_ints(L):
             total += 1
     return total
 assertEqual(count_mult3_ints([9, 12]), 2)
-assertEqual(count_mult3_ints([9, 12, 16, 18, 24]), 3)
+assertEqual(count_mult3_ints([9, 12, 16, 18, 24]), 4)
 assertEqual(count_mult3_ints([3, 15, 7, 18, 27]), 4)
 assertEqual(count_mult3_ints([9, 12, 7, 24, 39]), 4)
-assertEqual(count_mult3_ints([15, 36, 23, 22, 27]), 8)
-assertEqual(count_mult3_ints([12, 15, 7, 18, 27]), 5)
+assertEqual(count_mult3_ints([15, 36, 23, 22, 27]), 3)
+assertEqual(count_mult3_ints([12, -15, 7, 18, -27]), 4)
 
 
 
 
-# Problem 2
+print()
+print('Problem 2')
 def sum_odd_ints(L):
     '''
     returns the sum of ints in the list that are odd
@@ -50,16 +53,17 @@ def sum_odd_ints(L):
     else:
         return None
 assertEqual(sum_odd_ints([9, 12, 7]), 16)
-assertEqual(sum_odd_ints([9, 12]), 2)
+assertEqual(sum_odd_ints([9, 12]), 9)
 assertEqual(sum_odd_ints([11, 15]), 26)
 assertEqual(sum_odd_ints([2, 1, 7,]), 8)
-assertEqual(sum_odd_ints([6, 3, 2, 8, 10]), 9)
+assertEqual(sum_odd_ints([6, 3, 2, 8, 10]), 3)
 assertEqual(sum_odd_ints([8, 12, 66, 58]), None)
 
 
 
 
-# Problem 3
+print()
+print('Problem 3')
 def insert_list(list1, string1):
     '''
     Adds a string into a sorted list such that the list remains sorted
@@ -98,11 +102,19 @@ than str')
 
     if list1 == []:
         list1.append(string1)
-assertEqual(insert_list(['a', 'b', 'c'], 'd'), ['a', 'b', 'c','d'])
+
+    return list1
+
+assertEqual(insert_list(['a','b','c'], 'd'), ['a', 'b', 'c', 'd'])
+assertEqual(insert_list(['a','b','c'], 'b'), ['a', 'b', 'b', 'c'])
+assertEqual(insert_list(['b','b','d'], 'a'), ['a', 'b', 'b', 'd'])
+assertEqual(insert_list([4,'b','c'], 'd'), None)
+assertEqual(insert_list(['a','c','b'], 'd'), None)
+assertEqual(insert_list(['a','b','c'], 5), None)
 
 
-
-# Problem 4
+print()
+print('Problem 4')
 def triangle_centroid(x1, y1, x2, y2, x3, y3):
     '''
     Determines the distance from the origin to the centroid of a circle
@@ -140,7 +152,7 @@ def triangle_centroid(x1, y1, x2, y2, x3, y3):
     Ty = (y1 + y2 + y3) / 3
 
     return (Tx ** 2 + Ty ** 2)**(1/2)
-assertEqual(triangle_centroid(0, 2, 3, 4, 6, 7), 5.27)
+assertEqual(round(triangle_centroid(0, 2, 3, 4, 6, 7),2), 5.27)
 assertEqual(triangle_centroid('s', '2', 3, 4, 6, 7), None)
 assertEqual(triangle_centroid(5, 8, 8, 12, 12.0, 8), 12.512216252748974 )
 assertEqual(triangle_centroid(2, 2, 6, 4, 9, 2.0), 6.262764742685312)
@@ -151,7 +163,8 @@ assertEqual(triangle_centroid('1', 2, 3, 7, '12', 7), None)
 
 
 
-# Problem 5
+print()
+print('Problem 5')
 def assert_within_tolerance(num1, num2, tolerance):
     '''
     Determines whether two given numbers are close in value of one-another
@@ -184,7 +197,8 @@ assertEqual(assert_within_tolerance(11.0, 19.0, 10.0), True)
 
 
 
-# Problem 6
+print()
+print('Problem 6')
 def word_separator(string1):
     '''
     Converts a string sentence where all of the words are not separated by spaces and the first letter of each is
@@ -218,7 +232,8 @@ assertEqual(word_separator('LikeWater'), 'Like water')
 
 
 
-# Problem 7
+print()
+print('Problem 7')
 def word_parser(string1):
     '''
     Takes a sentence with any amount of whitespace between words and turns it into a list of words (without
@@ -260,7 +275,7 @@ def word_parser(string1):
             list3.append(tmp)
             tmp = ''
         else:
-            temp += c
+            temp += x
     if temp:
         list3.append(temp)
 
@@ -271,7 +286,8 @@ def word_parser(string1):
 
 
 
-# Problem 8
+print()
+print('Problem 8')
 def digit_product(string1):
     '''
     Returns the product of every digit that occurs in the given string
@@ -311,7 +327,8 @@ assertEqual(digit_product(18), None)
 
 
 
-# Problem 9
+print()
+print('Problem 9')
 def valid_password(password):
     '''
     Determines if a given password meets a set of given criteria
